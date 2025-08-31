@@ -9,7 +9,7 @@ export const OrderProvider = ({ children }) => {
 
   // const {orders,setOrders} = useContext(OrderContext);
 
-  const backend = 'https://api-quickbites.vercel.app';
+  const backend = 'https://quickbites-api.onrender.com';
 
   const addAcceptedOrder = (order) => {
     setAcceptedOrders((prev) => {

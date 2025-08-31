@@ -69,7 +69,7 @@ function OrderCard({ order, onUpdateStatus }) {
     setIsSendingOtp(true);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/delivery-agent/send-delivery-otp",
+        "https://quickbites-api.onrender.com/api/delivery-agent/send-delivery-otp",
         {
           email: order.email,
           orderId: order._id,
@@ -88,7 +88,7 @@ function OrderCard({ order, onUpdateStatus }) {
   const handleOtpSubmit = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/delivery-agent/verify-delivery-otp",
+        "https://quickbites-api.onrender.com/api/delivery-agent/verify-delivery-otp",
         {
           orderId: order._id,
           otp: otpInput,

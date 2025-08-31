@@ -6,7 +6,7 @@ import axios from "axios";
 // const socket = io("https://api-quickbites.vercel.app", { withCredentials: true });
 
 // To this
-const socket = io("https://api-quickbites.vercel.app", { withCredentials: true }); // Adjust backend URL
+const socket = io("https://quickbites-api.onrender.com", { withCredentials: true }); // Adjust backend URL
 
 const DeliveryPanel = ({ deliveryAgentId }) => {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -19,7 +19,7 @@ const DeliveryPanel = ({ deliveryAgentId }) => {
       
       // To match your other endpoints
       const { data } = await axios.post(
-        `https://api-quickbites.vercel.app/api/delivery-agent/get-agentprofile`,
+        `https://quickbites-api.onrender.com/api/delivery-agent/get-agentprofile`,
         { deliveryAgentId }
       );
       if (data) {
