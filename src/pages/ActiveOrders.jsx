@@ -37,7 +37,7 @@ function ActiveOrders() {
     setIsLoading(true);
     try {
       const { data } = await axios.post(
-        `https://api-quickbites.vercel.app/api/delivery-agent/get-orders`,
+        `https://quickbites-api.onrender.com/api/delivery-agent/get-orders`,
         { sellerId: decoded.sellerId }
       );
       console.log(data);
@@ -71,7 +71,7 @@ function ActiveOrders() {
   const handleUpdateStatus = async (orderId, newStatus) => {
   try {
     const res = await axios.post(
-      `https://api-quickbites.vercel.app/api/delivery-agent/respondeto-order`,
+      `https://quickbites-api.onrender.com/api/delivery-agent/respondeto-order`,
       {
         orderId,
         action: newStatus,
@@ -152,7 +152,7 @@ function ActiveOrders() {
   const getStatsData = async () => {
     try {
       const res = await axios.post(
-        `https://api-quickbites.vercel.app/api/delivery-agent/get-agentprofile`,
+        `https://quickbites-api.onrender.com/api/delivery-agent/get-agentprofile`,
         { deliveryAgentId: deliveryAgentId }
       );
       if (res.data) {
